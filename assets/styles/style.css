@@ -1,0 +1,369 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ЖЁСТКАЯ ФИКСАЦИЯ ШАПКИ — ОДИНАКОВАЯ ВЕЗДЕ */
+header {
+    background-color: #56026E;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    /* Фиксированная высота, чтобы ничто не влияло */
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.header-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #95A300;
+    padding: 8px 20px;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+    white-space: nowrap;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+}
+
+nav a:hover, nav a.active {
+    background-color: #95A300;
+    color: #000;
+    transform: translateY(-2px);
+}
+
+/* ОСНОВНОЙ КОНТЕНТ */
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Герой (главная) */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 20px;
+}
+
+.hero-image img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #95A300;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    color: #56026E;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.telegram-btn {
+    display: inline-block;
+    background-color: #95A300;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.telegram-btn:hover {
+    background-color: #56026E;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(86,2,110,0.3);
+}
+
+/* Универсальные карточки с анимацией */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    width: 280px;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(86,2,110,0.2);
+}
+
+.card img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card h3 {
+    color: #56026E;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* Для страницы about - делаем карточки шире */
+.gallery .card {
+    width: 320px;
+}
+
+.gallery .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Форма связи */
+.contact-form-section {
+    background: #f4f4f4;
+    padding: 2rem;
+    border-radius: 20px;
+    margin: 3rem 0;
+}
+
+.email-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.email-form input, .email-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.email-form input:focus, .email-form textarea:focus {
+    outline: none;
+    border-color: #56026E;
+    box-shadow: 0 0 5px rgba(86,2,110,0.3);
+}
+
+.email-form button {
+    background-color: #56026E;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.email-form button:hover {
+    background-color: #95A300;
+    color: black;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(149,163,0,0.3);
+}
+
+/* Детальное описание */
+.detailed-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.bio, .skills-detailed {
+    flex: 1;
+    background: #fafafa;
+    padding: 1.5rem;
+    border-radius: 20px;
+}
+
+.bio h3, .skills-detailed h3 {
+    color: #56026E;
+    margin-bottom: 1rem;
+    border-left: 3px solid #95A300;
+    padding-left: 10px;
+}
+
+.skill-block {
+    margin-bottom: 1.5rem;
+    padding-left: 10px;
+    border-left: 3px solid #95A300;
+    transition: all 0.3s ease;
+}
+
+.skill-block:hover {
+    transform: translateX(5px);
+}
+
+.skill-block h4 {
+    color: #56026E;
+    margin-bottom: 0.5rem;
+}
+
+/* Внеучебная жизнь */
+.work-detail {
+    background: #fafafa;
+    padding: 2rem;
+    border-radius: 20px;
+    margin: 0 0 2rem 0; /* Убрали верхний отступ */
+}
+
+.work-detail h2 {
+    color: #56026E;
+    margin-bottom: 1rem;
+}
+
+.work-detail ul {
+    list-style-type: square;
+    margin-left: 1.5rem;
+}
+
+.work-detail li {
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.work-detail li:hover {
+    transform: translateX(5px);
+    color: #56026E;
+}
+
+.events-gallery {
+    margin: 2rem 0 3rem 0;
+}
+
+.events-gallery .card {
+    width: 300px;
+}
+
+.events-gallery .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Подвал */
+footer {
+    background-color: #56026E;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Заголовки */
+h2 {
+    color: #56026E;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid #95A300;
+    padding-left: 15px;
+}
+
+h3 {
+    margin: 0.5rem 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .header-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    header {
+        height: auto;
+        padding: 0.8rem 0;
+    }
+    
+    .card, .gallery .card, .events-gallery .card {
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+        padding: 5px 15px;
+    }
+}
